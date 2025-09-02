@@ -6,7 +6,6 @@
     <title>Reasons Why I Love You 💖</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -15,19 +14,16 @@
             min-height: 100vh;
             padding: 20px;
         }
-        
         @keyframes gradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        
         .container {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
-        
         h1 {
             color: white;
             font-size: 3em;
@@ -35,19 +31,16 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             animation: pulse 2s infinite;
         }
-        
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        
         .reasons-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 40px;
         }
-        
         .reason-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -59,7 +52,6 @@
             position: relative;
             overflow: hidden;
         }
-        
         .reason-card::before {
             content: '';
             position: absolute;
@@ -70,17 +62,14 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.5s;
         }
-        
         .reason-card:hover::before {
             left: 100%;
         }
-        
         .reason-card:hover {
             transform: translateY(-10px) scale(1.05);
             background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
-        
         .reason-number {
             font-size: 2em;
             color: #fff;
@@ -88,7 +77,6 @@
             margin-bottom: 15px;
             opacity: 0.8;
         }
-        
         .reason-text {
             color: white;
             font-size: 1.2em;
@@ -97,12 +85,10 @@
             opacity: 0.9;
             transition: all 0.3s ease;
         }
-        
         .reason-card:hover .reason-text {
             transform: translateY(0);
             opacity: 1;
         }
-        
         .heart {
             position: absolute;
             color: #ff6b9d;
@@ -110,12 +96,10 @@
             opacity: 0;
             animation: float 3s ease-in-out infinite;
         }
-        
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
             50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
         }
-        
         .birthday-message {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
@@ -124,19 +108,16 @@
             margin: 40px 0;
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
-        
         .birthday-message h2 {
             color: white;
             font-size: 2.5em;
             margin-bottom: 20px;
         }
-        
         .birthday-message p {
             color: white;
             font-size: 1.3em;
             line-height: 1.8;
         }
-        
         #popup-overlay {
             position: fixed;
             top: 0;
@@ -154,7 +135,6 @@
             pointer-events: none;
             transition: opacity 0.7s ease;
         }
-
         #popup-overlay.active {
             opacity: 1;
             pointer-events: all;
@@ -164,9 +144,7 @@
             pointer-events: none;
             animation: burst 0.8s forwards;
         }
-
         .popup-content {
-            /* Glassmorphism effect with gradient overlay */
             background: linear-gradient(135deg, rgba(238,119,82,0.7), rgba(231,60,126,0.7), rgba(35,166,213,0.7), rgba(35,213,171,0.7));
             backdrop-filter: blur(18px) saturate(160%);
             -webkit-backdrop-filter: blur(18px) saturate(160%);
@@ -182,27 +160,21 @@
             position: relative;
             overflow: visible;
         }
-
         .popup-content h2, .popup-content p {
             color: #fff;
             text-shadow: 0 2px 8px rgba(0,0,0,0.12);
         }
-    
-
         #popup-overlay.hide .popup-content {
             animation: none;
             transform: scale(2.5);
             opacity: 0;
             transition: transform 0.7s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.7s;
         }
-
         .popup-burst {
             display: inline-block;
             will-change: transform, opacity, filter;
             transition: none;
         }
-
-        /* Burst animation for each letter */
         @keyframes letter-burst {
             to {
                 opacity: 0;
@@ -210,20 +182,65 @@
                 filter: blur(8px);
             }
         }
-
         #popup-overlay.hide .popup-burst {
             animation: letter-burst 0.7s forwards;
         }
-
         @keyframes slideIn {
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-
         @keyframes burst {
             to {
                 opacity: 0;
                 transform: scale(2.5);
+            }
+        }
+        /* MOBILE STYLES */
+        @media (max-width: 600px) {
+            body {
+                padding: 8px;
+            }
+            .container {
+                max-width: 97vw;
+                padding: 0 2vw;
+            }
+            h1 {
+                font-size: 2em;
+                margin-bottom: 18px;
+            }
+            .reasons-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-top: 18px;
+            }
+            .reason-card {
+                padding: 18px;
+                border-radius: 15px;
+            }
+            .reason-number {
+                font-size: 1.4em;
+                margin-bottom: 8px;
+            }
+            .reason-text {
+                font-size: 1em;
+                line-height: 1.4;
+            }
+            .birthday-message {
+                padding: 18px;
+                border-radius: 13px;
+                margin: 18px 0;
+            }
+            .birthday-message h2 {
+                font-size: 1.35em;
+                margin-bottom: 10px;
+            }
+            .birthday-message p {
+                font-size: 1em;
+            }
+            .popup-content {
+                padding: 18px 6px;
+                font-size: 1.15em;
+                border-radius: 13px;
             }
         }
     </style>
@@ -236,68 +253,57 @@
     </div>
     <div class="container">
         <h1>💖 Reasons Why I Love You 💖</h1>
-        
         <div class="birthday-message">
             <h2>🎉 Happy Birthday, Pondati! 🎉</h2>
             <p>On your special day, I want to remind you of all the reasons you make my world brighter. Here are just a few of the countless ways you've captured my heart...</p>
         </div>
-        
         <div class="reasons-grid">
             <div class="reason-card">
                 <div class="reason-number">01</div>
                 <div class="reason-text">Your smile lights up my entire world and makes even the darkest days feel bright and hopeful.</div>
                 <div class="heart" style="top: 10px; right: 10px; animation-delay: 0s;">💕</div>
             </div>
-            
             <div class="reason-card">
                 <div class="reason-number">02</div>
                 <div class="reason-text">The way you laugh at my terrible jokes makes me feel like the funniest person alive.</div>
                 <div class="heart" style="top: 15px; left: 15px; animation-delay: 0.5s;">💖</div>
             </div>
-            
             <div class="reason-card">
                 <div class="reason-number">03</div>
                 <div class="reason-text">Your kindness and compassion inspire me to be a better person every single day.</div>
                 <div class="heart" style="bottom: 10px; right: 20px; animation-delay: 1s;">💝</div>
             </div>
-            
             <div class="reason-card">
                 <div class="reason-number">04</div>
                 <div class="reason-text">The way you support my dreams and believe in me, even when I don't believe in myself.</div>
                 <div class="heart" style="top: 20px; left: 50%; animation-delay: 1.5s;">💗</div>
             </div>
-            
             <div class="reason-card">
                 <div class="reason-number">05</div>
                 <div class="reason-text">Your intelligence and the way you see the world always amazes and challenges me.</div>
                 <div class="heart" style="bottom: 15px; left: 10px; animation-delay: 2s;">💘</div>
             </div>
-            
             <div class="reason-card">
                 <div class="reason-number">06</div>
                 <div class="reason-text">How you make ordinary moments feel extraordinary just by being there with me.</div>
                 <div class="heart" style="top: 10px; right: 30px; animation-delay: 2.5s;">💞</div>
             </div>
-            
             <div class="reason-card">
                 <div class="reason-number">07</div>
                 <div class="reason-text">Your strength and resilience inspire me, and your vulnerability makes me feel trusted and needed.</div>
                 <div class="heart" style="bottom: 20px; right: 15px; animation-delay: 3s;">💟</div>
             </div>
-            
             <div class="reason-card">
                 <div class="reason-number">08</div>
                 <div class="reason-text">The way you love me - completely, unconditionally, and with your whole heart.</div>
                 <div class="heart" style="top: 25px; left: 20px; animation-delay: 3.5s;">❤️</div>
             </div>
         </div>
-        
         <div class="birthday-message">
             <h2>🌟 You Are My Everything 🌟</h2>
-            <p>These are just 8 reasons, but I could write a thousand more. Thank you for being the most amazing girlfriend and making every day a beautiful day. I love you more than words can express!</p>
+            <p>These are just 8 reasons, but I could write a thousand more. Thank you for being the most amazing girlfriend and making every day a beautiful day. I love you more than words can express[...]</p>
         </div>
     </div>
-    
     <script>
         // Add random floating hearts
         function createFloatingHeart() {
@@ -311,14 +317,11 @@
             heart.style.pointerEvents = 'none';
             heart.style.zIndex = '1000';
             heart.style.animation = 'floatUp 4s linear forwards';
-            
             document.body.appendChild(heart);
-            
             setTimeout(() => {
                 heart.remove();
             }, 4000);
         }
-        
         // Add CSS for floating animation
         const style = document.createElement('style');
         style.textContent = `
@@ -330,12 +333,10 @@
             }
         `;
         document.head.appendChild(style);
-
         // Wait for DOM to be ready
         document.addEventListener('DOMContentLoaded', function() {
             // Create floating hearts periodically
             setInterval(createFloatingHeart, 2000);
-
             // Add click effect to cards
             document.querySelectorAll('.reason-card').forEach(card => {
                 card.addEventListener('click', function() {
@@ -346,7 +347,6 @@
                 });
             });
         });
-
         // Helper to wrap each letter in a span for burst animation
         function burstifyText(text, delayStart = 0) {
             let html = '';
@@ -358,7 +358,6 @@
             }
             return html;
         }
-
         // Insert burstified popup content
         document.addEventListener('DOMContentLoaded', function() {
             const popupContent = document.getElementById('popup-content');
@@ -373,7 +372,6 @@
                 </p>
             `;
         });
-
         // Show popup overlay on page load with fade in and burst out
         window.addEventListener('load', () => {
             const popup = document.getElementById('popup-overlay');
